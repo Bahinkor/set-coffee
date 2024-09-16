@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 // Import Swiper React components
 import {Swiper, SwiperSlide} from "swiper/react";
 
@@ -21,21 +22,27 @@ function Banner() {
             className="mySwiper home-slider"
         >
             <SwiperSlide>
-                <img
-                    src="https://set-coffee.com/wp-content/uploads/2023/12/slide.jpg"
+                <Image
+                    src="/images/slider-image.jpg"
                     alt="Coffee Image"
+                    width="1500"
+                    height="700"
                 />
             </SwiperSlide>
             <SwiperSlide>
-                <img
-                    src="https://set-coffee.com/wp-content/uploads/2021/10/winter-slie.jpg"
+                <Image
+                    src="/images/slider-image2.jpg"
                     alt="Coffee Image"
+                    width="1500"
+                    height="700"
                 />
             </SwiperSlide>
             <SwiperSlide>
-                <img
-                    src="https://set-coffee.com/wp-content/uploads/2022/06/fall.jpg"
+                <Image
+                    src="/images/slider-image3.jpg"
                     alt="Coffee Image"
+                    width="1500"
+                    height="700"
                 />
             </SwiperSlide>
         </Swiper>
