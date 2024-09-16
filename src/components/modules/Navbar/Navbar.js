@@ -11,7 +11,7 @@ export default function Navbar() {
             <main>
                 <div>
                     <Link href="/">
-                        <img src="/images/logo.png" alt="Logo"/>
+                        <img src="/images/logo.png" alt="Set Coffee Logo"/>
                     </Link>
                 </div>
 
@@ -34,9 +34,9 @@ export default function Navbar() {
                     <li>
                         <Link href="/rules">قوانین</Link>
                     </li>
-                    {/* <li>
-            <Link href="/login-register">ورود / عضویت</Link>
-          </li> */}
+                    {/*<li>*/}
+                    {/*    <Link href="/login-register">ورود | عضویت</Link>*/}
+                    {/*</li>*/}
 
                     {/* Start My-account section */}
                     <div className={styles.dropdown}>
