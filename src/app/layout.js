@@ -1,4 +1,5 @@
 import './globals.css';
+import AOSInit from "@/utils/aos";
 
 // meta data tags foe seo
 export const metadata = {
@@ -13,7 +14,10 @@ export default function RootLayout({children}) {
     // jsx
     return (
         <html lang="fa">
-        <body>{children}</body>
+        <body>
+        <AOSInit/>
+        {children}
+        </body>
         </html>
     )
 }
