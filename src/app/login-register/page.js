@@ -9,11 +9,14 @@ import Login from "@/components/templates/login-register/Login";
 import Register from "@/components/templates/login-register/Register";
 
 const LoginRegister = () => {
+    // state
     const [authType, setAuthType] = useState(authTypes.LOGIN);
 
+    // function
     const showRegisterForm = () => setAuthType(authTypes.REGISTER);
     const showLoginForm = () => setAuthType(authTypes.LOGIN);
 
+    // jsx
     return (
         <div className={styles.login_register}>
             <div className={styles.form_bg} data-aos="fade-up">
