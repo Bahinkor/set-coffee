@@ -15,7 +15,7 @@ export default function Navbar() {
 
         const fixNavbarToTop = () => {
             // scroll y
-            const currentScroll = window.pageYOffset;
+            const currentScroll = window.scrollY;
 
             if (currentScroll > 110) {
                 setFixTop(true);
