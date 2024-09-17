@@ -1,7 +1,8 @@
-import Navbar from "@/components/modules/Navbar/Navbar";
+import Navbar from "@/components/modules/navbar/Navbar";
 import Footer from "@/components/modules/footer/Footer";
 import './globals.css';
 import AOSInit from "@/utils/aos";
+import ScrollToTop from "@/components/modules/scrollToTop/SctollToTop";
 
 // meta data tags foe seo
 export const metadata = {
@@ -25,6 +26,10 @@ export default function RootLayout({children}) {
         {/* Finish Header And Nav Section */}
 
         {children}
+
+        {/* Start Scroll To Top Button */}
+        <ScrollToTop/>
+        {/* Finish Scroll To Top Button */}
 
         {/* Start Footer Section */}
         <Footer/>
