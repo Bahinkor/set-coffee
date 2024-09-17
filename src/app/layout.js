@@ -1,3 +1,5 @@
+import Navbar from "@/components/modules/Navbar/Navbar";
+import Footer from "@/components/modules/footer/Footer";
 import './globals.css';
 import AOSInit from "@/utils/aos";
 
@@ -15,8 +17,19 @@ export default function RootLayout({children}) {
     return (
         <html lang="fa">
         <body>
+        {/* AOS Package */}
         <AOSInit/>
+
+        {/* Start Header And Nav Section */}
+        <Navbar/>
+        {/* Finish Header And Nav Section */}
+
         {children}
+
+        {/* Start Footer Section */}
+        <Footer/>
+        {/* Finish Footer Section */}
+
         </body>
         </html>
     )
