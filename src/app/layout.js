@@ -21,19 +21,11 @@ export default function RootLayout({children}) {
         {/* AOS Package */}
         <AOSInit/>
 
-        {/* Start Header And Nav Section */}
-        <Navbar/>
-        {/* Finish Header And Nav Section */}
-
         {children}
 
         {/* Start Scroll To Top Button */}
         <ScrollToTop/>
         {/* Finish Scroll To Top Button */}
-
-        {/* Start Footer Section */}
-        <Footer/>
-        {/* Finish Footer Section */}
 
         </body>
         </html>
