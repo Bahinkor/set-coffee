@@ -1,8 +1,9 @@
-const {Schema, model, models} = require("mongoose");
+const {Schema, model: mongooseModel, models} = require("mongoose");
 
-const userSchema = new Schema({
+const schema = new Schema({
     name: {
         type: String,
+        minlength: 1,
         required: true
     },
     email: {
@@ -11,11 +12,13 @@ const userSchema = new Schema({
     },
     phone: {
         type: String,
+        minlength: 11,
         required: true
     },
     password: {
         type: String,
-        required: false
+        required: false,
+        minlength: 4,
     },
     role: {
         type: String,
@@ -24,6 +27,6 @@ const userSchema = new Schema({
     refreshToken: String
 });
 
-const userModel = models.User || model("User", userSchema);
+const model = models.User || mongooseModel("User", schema);
 
-export default userModel;
+export default model;
