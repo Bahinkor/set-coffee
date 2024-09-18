@@ -4,6 +4,7 @@ import React, {useState} from "react";
 import Link from "next/link";
 import Sms from "@/components/templates/login-register/Sms";
 import styles from "./register.module.css";
+import swal from "sweetalert";
 
 const Register = ({showLoginForm}) => {
     // state
@@ -19,6 +20,32 @@ const Register = ({showLoginForm}) => {
 
     // function
     const hideOtpFrom = () => setIsRegisterWithOtp(false);
+
+    const registerHandler = async () => {
+        const data = {
+            name,
+            phone,
+            email,
+            password
+        };
+
+        const res = await fetch("/api/auth/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        });
+
+        // sweet alert package
+        if (res.status === 201) {
+            swal({
+                icon: "success",
+                title: "ثبت نام با موفقیت انجام شد.",
+                button: "ورود به پنل"
+            })
+        }
+    }
 
     // jsx
     return (
@@ -64,7 +91,9 @@ const Register = ({showLoginForm}) => {
                                 ثبت نام با کد تایید
                             </p>
                             <button style={{marginTop: ".7rem"}} className={styles.btn}
-                                    onClick={() => setIsRegisterWithPassword(true)}>
+                                    onClick={() => {
+                                        isRegisterWithPassword ? registerHandler() : setIsRegisterWithPassword(true)
+                                    }}>
                                 ثبت نام با رمزعبور
                             </button>
                             <p className={styles.back_to_login} onClick={showLoginForm}>برگشت به ورود</p>

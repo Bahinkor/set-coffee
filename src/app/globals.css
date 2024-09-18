@@ -197,3 +197,11 @@ a {
     left: unset !important;
     top: unset !important;
 }
+
+/* start sweet alert styles */
+
+.swal-button {
+    color: green;
+}
+
+/* finish sweet alert styles */
