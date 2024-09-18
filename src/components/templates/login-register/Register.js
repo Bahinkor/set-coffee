@@ -9,6 +9,13 @@ const Register = ({showLoginForm}) => {
     // state
     const [isRegisterWithPassword, setIsRegisterWithPassword] = useState(false);
     const [isRegisterWithOtp, setIsRegisterWithOtp] = useState(false);
+    // register form state
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    // validation
 
     // function
     const hideOtpFrom = () => setIsRegisterWithOtp(false);
@@ -20,15 +27,25 @@ const Register = ({showLoginForm}) => {
                 !isRegisterWithOtp ? (
                     <>
                         <div className={styles.form}>
-                            <input className={styles.input} type="text" placeholder="نام"/>
                             <input
                                 className={styles.input}
                                 type="text"
+                                value={name}
+                                onChange={e => setName(e.target.value)}
+                                placeholder="نام"
+                            />
+                            <input
+                                className={styles.input}
+                                type="text"
+                                value={phone}
+                                onChange={e => setPhone(e.target.value)}
                                 placeholder="شماره موبایل  "
                             />
                             <input
                                 className={styles.input}
                                 type="email"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
                                 placeholder="ایمیل (دلخواه)"
                             />
                             {
@@ -36,6 +53,8 @@ const Register = ({showLoginForm}) => {
                                     <input
                                         className={styles.input}
                                         type="password"
+                                        value={password}
+                                        onChange={e => setPassword(e.target.value)}
                                         placeholder="رمز عبور"
                                     />
                                 )
