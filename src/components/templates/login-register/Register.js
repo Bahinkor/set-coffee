@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import Link from "next/link";
 import Sms from "@/components/templates/login-register/Sms";
 import styles from "./register.module.css";
-import swal from "sweetalert";
+import {showSwal, emailValidator, phoneValidator} from "@/utils/helpers";
 
 const Register = ({showLoginForm}) => {
     // state
@@ -16,12 +16,34 @@ const Register = ({showLoginForm}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    // validation
-
     // function
     const hideOtpFrom = () => setIsRegisterWithOtp(false);
 
     const registerHandler = async () => {
+        // validation
+        if (!name.trim()) {
+            showSwal("نام معتبر نیست.", "error", "تلاش مجدد");
+            return false;
+        }
+
+        const isValidPhone = phoneValidator(phone);
+        if (!isValidPhone) {
+            showSwal("شماره تماس معتبر نیست.", "error", "تلاش مجدد");
+            return false;
+        }
+
+        const isValidEmail = emailValidator(email);
+        if (!isValidEmail) {
+            showSwal("ایمیل معتبر نیست.", "error", "تلاش مجدد");
+            return false;
+        }
+
+        if (password.trim().length < 4) {
+            showSwal("رمز عبور باید حداقل ۴ کارکتر باشد.", "error", "تلاش مجدد");
+            return false;
+        }
+
+        // data
         const data = {
             name,
             phone,
@@ -39,11 +61,11 @@ const Register = ({showLoginForm}) => {
 
         // sweet alert package
         if (res.status === 201) {
-            swal({
-                icon: "success",
-                title: "ثبت نام با موفقیت انجام شد.",
-                button: "ورود به پنل"
-            })
+            showSwal("ثبت نام با موفقیت انجام شد.", "success", "ورود به پنل");
+        } else if (res.status === 422) {
+            showSwal("اطلاعات معتبر نمیباشد.", "error", "تلاش مجدد");
+        } else {
+            showSwal("مشکلی پیش آمد.", "error", "تلاش مجدد");
         }
     }
 
