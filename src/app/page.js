@@ -13,7 +13,7 @@ export default async function Home() {
     // jsx
     return (
         <>
-            <Navbar isLogin={user}/>
+            <Navbar isLogin={!!user}/>
             <Banner/>
             <Latest/>
             <Promote/>
