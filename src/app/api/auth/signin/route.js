@@ -51,6 +51,13 @@ export const POST = async (req) => {
             email: user.email
         });
 
+        // set refresh token to db
+        await model.findOneAndUpdate({
+            email: user.email
+        }, {
+            $set: {refreshToken}
+        });
+
         // send res
         return Response.json({
             message: "sign in successfully.",
