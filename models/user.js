@@ -25,7 +25,7 @@ const schema = new Schema({
         default: "USER"
     },
     refreshToken: String
-});
+}, {timestamps: true});
 
 const model = models.User || mongooseModel("User", schema);
 
