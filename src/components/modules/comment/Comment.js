@@ -1,14 +1,14 @@
 import { FaStar } from "react-icons/fa";
 
 import styles from "./comment.module.css";
-const Comment = () => {
+const Comment = ({body, username}) => {
   return (
     <section className={styles.comment}>
-      <img src="/images/shahin.jpg" className={styles.avatar} alt="" />
+      <img src="/images/shahin.jpg" className={styles.avatar} alt="profile image" />
       <div>
         <div className={styles.main_details}>
           <div className={styles.user_info}>
-            <strong>shahin</strong>
+            <strong>{username}</strong>
             <p>۲۸ آذر ۱۴۰۱</p>
           </div>
           <div className={styles.stars}>
@@ -19,10 +19,7 @@ const Comment = () => {
             <FaStar />
           </div>
         </div>
-        <p>
-          قهوه بسیار خوش عطر و طعمیه…کاش کم کم مدل های کپسول ها رو متنوع تر
-          کنید.
-        </p>
+        <p>{body}</p>
       </div>
     </section>
   );
