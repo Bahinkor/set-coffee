@@ -32,7 +32,7 @@ const schema = new mongoose.Schema({
     },
     score: {
         type: Number,
-        required: true,
+        default: 5,
         max: 5,
         min: 1
     },
