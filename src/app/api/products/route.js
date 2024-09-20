@@ -1,12 +1,21 @@
 import connectToDB from "@@/configs/db";
 import model from "@@/models/product";
+import check from "@@/validators/product";
 
 export const POST = async (req) => {
     try {
         await connectToDB();
 
-        // get data from req body
         const body = await req.json();
+
+        // validation data
+        const dataValidator = check(body);
+
+        if (dataValidator !== true) {
+            return Response.json(dataValidator, {status: 422});
+        }
+
+        // get data from req body
         const {
             name,
             price,
