@@ -4,10 +4,12 @@ require("@@/models/comment");
 const schema = new mongoose.Schema({
     name: {
         type: String,
+        min: 1,
         required: true
     },
     price: {
         type: Number,
+        min: 0,
         required: true
     },
     shortDescription: {
@@ -20,6 +22,7 @@ const schema = new mongoose.Schema({
     },
     weight: {
         type: Number,
+        min: 0,
         required: true
     },
     suitableFor: {

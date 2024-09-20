@@ -5,9 +5,11 @@ const v = new Validator();
 const schema = {
     name: {
         type: "string",
+        min: 1
     },
     price: {
         type: "number",
+        min: 0
     },
     shortDescription: {
         type: "string",
@@ -17,6 +19,7 @@ const schema = {
     },
     weight: {
         type: "number",
+        min: 0
     },
     suitableFor: {
         type: "string",
