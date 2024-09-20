@@ -59,7 +59,7 @@ const Tabs = ({productData}) => {
           <MoreInfoes productData={JSON.parse(JSON.stringify(productData))} />
         </section>
         <section className={styles.tabs_content}>
-          <Comments comments={JSON.parse(JSON.stringify(productData.comments))} />
+          <Comments productID={productData._id} comments={productData.comments} />
         </section>
       </div>
     </div>

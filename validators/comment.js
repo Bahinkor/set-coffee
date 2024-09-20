@@ -17,7 +17,8 @@ const schema = {
     score: {
         type: "number",
         min: 1,
-        max: 5
+        max: 5,
+        optional: true
     },
     productID: {
         type: "string",
