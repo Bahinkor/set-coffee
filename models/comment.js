@@ -21,10 +21,10 @@ const schema = new mongoose.Schema({
     },
     date: {
         type: Date,
-        default: () => Date.new(),
+        default: Date.now,
         immutable: false
     },
-    product: {
+    productID: {
         type: mongoose.Types.ObjectId,
         ref: "Product"
     }
