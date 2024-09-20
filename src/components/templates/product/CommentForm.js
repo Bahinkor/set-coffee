@@ -59,6 +59,10 @@ const CommentForm = ({productID}) => {
 
         if (res.status === 201) {
             showSwal("کامنت با موفقیت ثبت شد.", "success", "بستن");
+            setUsername("");
+            setEmail("");
+            setBody("");
+            setScore(5);
         } else if (res.status === 422) {
             showSwal("اطلاعات وارد شده صحیح نیست.", "error", "تلاش مجدد");
         } else if (res.status === 500) {

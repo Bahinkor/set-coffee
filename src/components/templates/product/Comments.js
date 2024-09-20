@@ -6,7 +6,7 @@ const Comments = ({productID, comments}) => {
     // jsx
     return (
         <div>
-            <p>نظرات ({comments.length}) :</p>
+            <p>نظرات ({comments.filter(comment => comment.isAccept).length}) :</p>
             <hr/>
 
             <main className={styles.comments}>
@@ -14,7 +14,7 @@ const Comments = ({productID, comments}) => {
                     <div>
                         {
                             comments.map(comment => (
-                                <Comment {...comment} key={comment._id}/>
+                                comment.isAccept && <Comment {...comment} key={comment._id}/>
                             ))
                         }
                     </div>
