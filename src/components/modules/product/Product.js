@@ -4,7 +4,7 @@ import styles from "./product.module.css";
 import {FaRegStar, FaStar} from "react-icons/fa";
 import {CiSearch, CiHeart} from "react-icons/ci";
 
-const Card = ({name, price, score}) => {
+const Product = ({name, price, score}) => {
     return (
         <div className={styles.card}>
             <div className={styles.details_container}>
@@ -47,4 +47,4 @@ const Card = ({name, price, score}) => {
     );
 };
 
-export default Card;
+export default Product;
