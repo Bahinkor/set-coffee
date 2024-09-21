@@ -54,7 +54,7 @@ export const POST = async (req) => {
     }
 };
 
-export const GET = async (req) => {
+export const GET = async () => {
     try {
         await connectToDB();
 
