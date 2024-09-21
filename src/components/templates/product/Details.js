@@ -5,6 +5,7 @@ import { TbSwitch3 } from "react-icons/tb";
 import { FaTelegram, FaLinkedinIn, FaPinterest } from "react-icons/fa";
 import styles from "./details.module.css";
 import Breadcrumb from "./Breadcrumb";
+import AddToWishlist from "@/components/modules/addToWishlist/AddToWishlist";
 
 const Details = ({productData}) => {
   return (
@@ -48,10 +49,7 @@ const Details = ({productData}) => {
       </div>
 
       <section className={styles.wishlist}>
-        <div>
-          <CiHeart />
-          <a href="/">افزودن به علاقه مندی ها</a>
-        </div>
+        <AddToWishlist/>
         <div>
           <TbSwitch3 />
           <a href="/">مقایسه</a>
